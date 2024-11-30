@@ -14,7 +14,7 @@ start:
 stop:
 	sudo docker compose stop
 
-logs:
+backend_logs:
 	sudo docker logs backend
 
 db_logs:
