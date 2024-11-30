@@ -1,10 +1,11 @@
 const logger = require('./utils/logger')
 
-const artifact_controller = require('./controllers/artifact.controller')
 const resource_controller = require('./controllers/resource.controller')
+const model_controller = require('./controllers/model.controller')
 
 const router = (app) => {
     app.get('/resources', logger_middleware, resource_controller.GET.list)
+    app.get('/models', logger_middleware, model_controller.GET.list)
 }
 
 function logger_middleware(req, res, next) {
