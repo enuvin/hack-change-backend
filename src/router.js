@@ -1,15 +1,41 @@
 const logger = require('./utils/logger')
 
-// const commRouter = require('../api/comment')
+const artifact_controller = require('./controllers/artifact.controller')
+const resource_controller = require('./controllers/resource.controller')
 
 const router = (app) => {
-    app.use('/test', loggerMiddleware, (req, res) => { res.json({ message: "test" }) })
+    app.get('/resources', logger_middleware, resource_controller.GET.list)
 }
 
-// middleware для логирования HTTP запросов
-function loggerMiddleware(req, res, next) {
-    logger.info(`${req?.method} ${req?.url}`)
+function logger_middleware(req, res, next) {
+    logger.info(`${Date.now()} ${req?.method} ${req?.url}`)
     next()
 }
 
 module.exports = { router }
+
+/*
+1. Получение списков источников
+/resources GET method
+response: 
+[{name: string, data: any}]
+
+2. Получение списка моделей
+/models GET method
+response:
+[{name: string, scheme: SCHEME}]
+
+3. Преобразование данных с помощью AI
+/transform POST method
+payload:
+{data: any, scheme: SCHEME}
+response:
+{status: 200, result: data}
+
+4. Подтверждение преобразования данных
+/approve POST method
+payload:
+{data: any, scheme: SCHEME}
+response:
+{status: 200}
+*/

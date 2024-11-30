@@ -20,8 +20,6 @@ app.use((err, req, res, next) => {
     }
 })
 
-// Router
-
 try {
     router(app)
 } catch (error) {
@@ -31,7 +29,6 @@ try {
 function start() {
     try {
         app.listen(PORT, () => {
-            console.log(`Server started on PORT = ${PORT}`)
             logger.info(`Server started on PORT = ${PORT}`)
         })
     } catch (error) {

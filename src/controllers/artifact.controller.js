@@ -1,14 +1,11 @@
-const logger = require("./utils/logger")
+const logger = require("../utils/logger")
 
 const GET = {
     all: async (req, res) => {
         try {
-            const commentId = req.params.id;
-            const results = await CommentModel.findById(commentId);
-            const response = getPrismaResponse(results, 'Comment', 'findById');
-            res.status(response.status).json(response);
+            res.status(200).json({ success: 1 });
         } catch (error) {
-            console.error(error);
+            logger.error(error);
             res.status(500).json({ error: 'Internal server error' });
         }
     },
