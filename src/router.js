@@ -6,11 +6,18 @@ const model_controller = require('./controllers/model.controller')
 const router = (app) => {
     app.get('/resources', logger_middleware, resource_controller.GET.list)
     app.get('/models', logger_middleware, model_controller.GET.list)
+    app.use(logger_middleware, not_found);
 }
 
 function logger_middleware(req, res, next) {
     logger.info(`${Date.now()} ${req?.method} ${req?.url}`)
     next()
+}
+
+function not_found(req, res) {
+    res.status(404);
+    res.json({ error: 'Not found' })
+    logger.info({ error: 'Not found' }, 'Not found')
 }
 
 module.exports = { router }
