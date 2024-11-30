@@ -19,6 +19,8 @@ model = GigaChat(
     model="GigaChat",
     # Отключает проверку наличия сертификатов НУЦ Минцифры
     verify_ssl_certs=False,
+    streaming=True,
+    callbacks=[StreamHandler()]
 )
 messages = [
     SystemMessage(
@@ -44,7 +46,7 @@ def giga(text):
             return res.content
         except Exception as e:
             print(e)
-            return 0.0
+            return 0
 
 if __name__ == '__main__':
     print(giga(argv[1]))
