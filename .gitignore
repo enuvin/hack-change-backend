@@ -1,0 +1,14 @@
+/logs
+/main_database
+/node_modules
+.env
+
+/spring-java/target/
+/.idea/.gitignore
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/hackathon_november_2024.iml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
