@@ -1,9 +1,19 @@
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_gigachat.chat_models import GigaChat
 
+from dotenv import load_dotenv
+import os
+
+# Загружаем переменные окружения из файла .env
+load_dotenv()
+
+# Извлекаем пароль
+credentials = os.getenv('GIGACHAT_CREDENTIALS')
+print(credentials)
+
 # Авторизация в GigaChat
 model = GigaChat(
-    credentials="NjhiZGE4YmUtN2ZiOS00YjZhLTk5N2QtMjllMjgwMjlmY2FhOjdmZjI1NDI2LTIxZTYtNDhkZi1iNjJmLTBiNzEyNDhjMmIzOQ==",
+    credentials=credentials,
     scope="GIGACHAT_API_PERS",
     model="GigaChat",
     # Отключает проверку наличия сертификатов НУЦ Минцифры
