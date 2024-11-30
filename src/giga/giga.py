@@ -19,12 +19,13 @@ model = GigaChat(
     model="GigaChat",
     # Отключает проверку наличия сертификатов НУЦ Минцифры
     verify_ssl_certs=False,
+    
     streaming=True,
     callbacks=[StreamHandler()]
 )
 messages = [
     SystemMessage(
-        content="Ты эмпатичный бот-психолог, который помогает пользователю решить его проблемы."
+        content="сколько будет 150 плюс 150."
     )
 ]
 def giga(text):
@@ -38,15 +39,13 @@ def giga(text):
     #     print("Ответ: ", res.content)
         
         try:
-            # str1 строка с данными
-            user_input = text
-            messages.append(HumanMessage(content=user_input))
+            messages.append(HumanMessage(content=text))
             res = model.invoke(messages)
             messages.append(res)
-            return res.content
+            return res
         except Exception as e:
             print(e)
             return 0
 
 if __name__ == '__main__':
-    print(giga(argv[1]))
+    print(giga(argv[0]))
