@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const app = express()
 const logger = require('./utils/logger')
 const { router } = require('./router.js')
+const cors = require('cors')
 
 const PORT = process.env.APP_PORT || 5000
 
@@ -13,6 +14,8 @@ app.use(helmet())
 app.use(express.json({ strict: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
+
+app.use(cors())
 
 app.use((err, req, res, next) => {
     if (err) {

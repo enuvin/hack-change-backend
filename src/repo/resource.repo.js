@@ -1,3 +1,5 @@
+const Form = require('../entities/Form')
+
 const data_dir = '../../data'
 
 const anketa = require(data_dir + '/anketa.json')
@@ -14,21 +16,9 @@ const okb_scheme = require(data_dir + '/okb_scheme.json')
 
 module.exports = {
     resources_list: [
-        {
-            name: anketa_scheme.title,
-            data: anketa
-        },
-        {
-            name: edu_scheme.title,
-            data: edu
-        },
-        {
-            name: fedresurs_scheme.title,
-            data: fedresurs
-        },
-        {
-            name: okb_scheme.title,
-            data: okb
-        },
+        new Form(anketa_scheme.title, anketa, true),
+        new Form(edu_scheme.title, edu, true),
+        new Form(fedresurs_scheme.title, fedresurs, true),
+        new Form(okb_scheme.title, okb, true),
     ]
 }
