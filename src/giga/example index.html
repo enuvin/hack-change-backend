@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calling Python from Electron!</title>
+</head>
+
+<body>
+    <h1>Answer GigaChat!</h1>
+    <p>Input text <code>123</code>.</p>
+    <input id="input" value="123"></input>
+    <input id="btn" type="button" value="Send to Python!"></input>
+    </br>
+    Got <span id="result"></span>
+    <!-- renderer.jx вызывается giga.py и ответ должен вывести -->
+    <script src="./renderer.js"></script>
+
+</body>
+</html>
