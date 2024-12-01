@@ -2,21 +2,21 @@ const GigaChat = require('gigachat-node').GigaChat;
 require("dotenv").config()
 
 
-class GigaChat{
+class MyGigaChat {
     client = ""
-    async createToken(){
+    async createToken() {
         console.log(process.env.GIGACHAT_CLIENT_SECRET)
         const client = new GigaChat(process.env.GIGACHAT_CLIENT_ID_BASE64);
         await client.createToken();
         this.client = client
     }
-    async getMessage (userMessage){
+    async getMessage(userMessage) {
         const responce = await this.client.completion({
             "model": "GigaChat:latest",
-            "messages":[
+            "messages": [
                 {
-                    role:"user",
-                    contest:userMessage
+                    role: "user",
+                    contest: userMessage
                 }
             ]
         });
@@ -26,4 +26,4 @@ class GigaChat{
     }
 }
 
-module.exports = new GigaChat()
+module.exports = new MyGigaChat()

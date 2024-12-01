@@ -1,7 +1,7 @@
 const Form = require('../entities/Form')
 const Education = require('../entities/Education')
 const Federation = require('../entities/Federation')
-const Committee = require('../entities/Committee')
+const Committee = require('../entities//Committee')
 
 const data_dir = '../../data'
 

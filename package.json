@@ -15,7 +15,8 @@
 		"helmet": "^7.1.0",
 		"pg": "^8.11.0",
 		"pino": "^8.11.0",
-		"pino-pretty": "^9.4.0"
+		"pino-pretty": "^9.4.0",
+    "gigachat-node": "2.1.4"
 	},
   "author": "lorriant",
   "license": "ISC"

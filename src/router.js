@@ -7,7 +7,7 @@ const gigachat_controller = require('./controllers/gigachat.controller')
 const router = (app) => {
     app.get('/resources', logger_middleware, resource_controller.GET.list)
     app.get('/models', logger_middleware, model_controller.GET.list)
-    // app.get('/transform', logger_middleware, gigachat_controller.GET.transform)
+    app.post('/transform', logger_middleware, gigachat_controller.POST.transform)
     app.use(logger_middleware, not_found);
 }
 
