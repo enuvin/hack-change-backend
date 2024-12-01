@@ -27,4 +27,5 @@ npm run build
 make all
 так же нужно добавить в переменную среду 
 GIGACHAT_CLIENT_SECRET
+GIGACHAT_CLIENT_ID_BASE64
 
