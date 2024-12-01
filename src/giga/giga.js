@@ -1,6 +1,7 @@
 const GigaChat = require('gigachat-node').GigaChat;
 require("dotenv").config()
 
+
 class GigaChat{
     client = ""
     async createToken(){
