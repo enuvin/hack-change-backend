@@ -1,16 +1,5 @@
-class Form {
-    /** @type {string} */
-    name;
-    /** @type {any} */
-    data;
-    /** @type {boolean} */
-    available;
+const ResourceBase = require('./ResourceBase')
 
-    constructor(name, data, available) {
-        this.name = name
-        this.data = data
-        this.available = available
-    }
-}
+class Form extends ResourceBase { }
 
 module.exports = Form

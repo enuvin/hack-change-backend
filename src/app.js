@@ -13,7 +13,7 @@ app.use(helmet())
 app.use(express.json({ strict: true }))
 app.use(express.urlencoded({ extended: true }))
 
-app.use(cors())
+app.use(cors()) // unsafety
 
 app.use((err, req, res, next) => {
     if (err) {

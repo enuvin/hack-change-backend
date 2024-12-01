@@ -1,4 +1,6 @@
 const Form = require('../entities/Form')
+const Education = require('../entities/Education')
+const Federation = require('../entities/Federation')
 
 const data_dir = '../../data'
 
@@ -17,8 +19,8 @@ const okb_scheme = require(data_dir + '/okb_scheme.json')
 module.exports = {
     resources_list: [
         new Form(anketa_scheme.title, anketa, true),
-        new Form(edu_scheme.title, edu, true),
-        new Form(fedresurs_scheme.title, fedresurs, true),
+        new Education(edu_scheme.title, edu, true),
+        new Federation(fedresurs_scheme.title, fedresurs, true),
         new Form(okb_scheme.title, okb, true),
     ]
 }
