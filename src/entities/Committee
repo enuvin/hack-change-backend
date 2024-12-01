@@ -1,5 +1,5 @@
 const ResourceBase = require('./ResourceBase')
 
-class Form extends ResourceBase { }
+class Committee extends ResourceBase { }
 
-module.exports = Form
+module.exports = Committee
