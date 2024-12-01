@@ -1,6 +1,7 @@
 const Form = require('../entities/Form')
 const Education = require('../entities/Education')
 const Federation = require('../entities/Federation')
+const Committee = require('../entities/Committee')
 
 const data_dir = '../../data'
 
@@ -21,6 +22,6 @@ module.exports = {
         new Form(anketa_scheme.title, anketa, true),
         new Education(edu_scheme.title, edu, true),
         new Federation(fedresurs_scheme.title, fedresurs, true),
-        new Form(okb_scheme.title, okb, true),
+        new Committee(okb_scheme.title, okb, true),
     ]
 }
